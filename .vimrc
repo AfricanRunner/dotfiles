@@ -6,7 +6,10 @@ set autoindent
 
 set display+=lastline
 
-set laststatus=2
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase
 
 inoremap {<CR> {}<Esc>i<CR><CR><Esc>kA<Tab>
 
