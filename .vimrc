@@ -1,3 +1,4 @@
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -17,11 +18,14 @@ Plugin 'honza/vim-snippets'
 
 Plugin 'w0rp/ale' " Error stuff
 
+" Plugin 'artur-shaik/vim-javacomplete2' " Java auto-complete
+" Plugin 'ycm-core/YouCompleteMe' " auto-complete
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-filetype plugin indent on    " required
+" filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
-"filetype plugin on
+filetype plugin on
 "
 " Brief help
 " :PluginList       - lists configured plugins
@@ -32,10 +36,16 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+" Navigating multiple panes
+
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
 syntax on
 
 set tabstop=4
-
 set autoindent
 
 set display+=lastline
@@ -45,7 +55,7 @@ set hlsearch
 set ignorecase
 set smartcase
 
-inoremap {<CR> {}<Esc>i<CR><CR><Esc>kA<Tab>
+inoremap {<CR> {}<Esc>i<CR><Esc>kA<CR><Tab>
 
 set number relativenumber
 
@@ -56,4 +66,5 @@ autocmd FileType markdown map <F8> <Esc>:w<CR>:!pandoc --from markdown+tex_math_
 autocmd FileType markdown inoremap \[<Space> \[<Space><Space><Space>\]<Esc>3hi
 autocmd FileType markdown inoremap \(<Space> \(<Space><Space><Space>\)<Esc>3hi
 autocmd FileType markdown set spell
+autocmd FileType markdown set linebreak
 
