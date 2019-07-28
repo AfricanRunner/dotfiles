@@ -43,6 +43,9 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+nnoremap <C-\> :Vexplore!<CR>
+nnoremap  :Sexplore!<CR>
+
 syntax on
 
 set tabstop=4
