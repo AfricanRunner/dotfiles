@@ -36,15 +36,17 @@ sudo update-alternatives --set editor /usr/local/bin/vim
 sudo update-alternatives --install /usr/bin/vi vi /usr/local/bin/vim 1
 sudo update-alternatives --set vi /usr/local/bin/vim
 
+cd ~/dotfiles
 ./copy.sh
 
 echo "Setting up vim plugins..."
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 
-sudo --asume-yes apt-get install cmake
+sudo apt-get --assume-yes install cmake
 
 cd ~/.vim/bundle/YouCompleteMe
 python3 install.py --all
 
+cd
 
