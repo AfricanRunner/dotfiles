@@ -9,7 +9,7 @@ libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev \
 python3-dev ruby-dev lua5.1 liblua5.1-dev libperl-dev git
 
 # Remove previous vim
-sudo apt remove vim-tiny vim-common vim-gui-common vim-nox
+sudo apt --assume-yes remove vim-tiny vim-common vim-gui-common vim-nox
 
 cd ~
 git clone https://github.com/vim/vim.git
