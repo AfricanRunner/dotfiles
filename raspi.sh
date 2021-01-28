@@ -47,5 +47,8 @@ vim +PluginInstall +qall
 # cd ~/.vim/bundle/YouCompleteMe
 # python3 install.py --all
 
+sudo apt-get --assume-yes install zsh
+sudo chsh -s "$(command -v zsh)" "${USER}"
+
 cd
 
