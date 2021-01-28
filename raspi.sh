@@ -43,10 +43,9 @@ echo "Setting up vim plugins..."
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 
-sudo apt-get --assume-yes install cmake
-
-cd ~/.vim/bundle/YouCompleteMe
-python3 install.py --all
+# sudo apt-get --assume-yes install cmake
+# cd ~/.vim/bundle/YouCompleteMe
+# python3 install.py --all
 
 cd
 
