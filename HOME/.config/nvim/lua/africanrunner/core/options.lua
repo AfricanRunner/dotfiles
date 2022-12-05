@@ -15,20 +15,28 @@ opt.hlsearch = true
 opt.incsearch = true
 
 opt.termguicolors = true
-opt.background = "dark"
+opt.background = 'dark'
 
 opt.splitright = true
 opt.splitbelow = true
 
-opt.iskeyword:append("-")
+opt.iskeyword:append('-')
 
-opt.clipboard = "unnamed"
+opt.clipboard = 'unnamed'
 
 -- To-do: Format nicely, add git buffers
-api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
-  pattern = { "*.md", "*.txt" },
+api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
+  pattern = { '*.md', '*.txt' },
   callback = function()
     opt.spell = true
+  end,
+})
+
+api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
+  pattern = { '*.lua', '*.js', '*.ts' },
+  callback = function()
+    opt.tabstop = 2
+    opt.shiftwidth = 2
   end,
 })
 
@@ -39,8 +47,8 @@ api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 
 -- set colorscheme to nightfly with protected call
 -- in case it isn't installed
-local status, _ = pcall(vim.cmd, "colorscheme nightfly")
+local status, _ = pcall(vim.cmd, 'colorscheme nightfly')
 if not status then
-  print("Colorscheme not found!") -- print error if colorscheme not installed
+  print('Colorscheme not found!') -- print error if colorscheme not installed
   return
 end
