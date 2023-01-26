@@ -21,6 +21,7 @@ mason_lspconfig.setup({
     'jdtls',
     'jedi_language_server',
     'sumneko_lua',
+    'clangd',
   },
 })
 
@@ -33,6 +34,9 @@ mason_null_ls.setup({
     -- "black",
     'flake8', -- python linter
     'yapf', -- python formatter
+    'mypy',
+    'cpplint', -- python formatter
+    'clang_format',
   },
   automatic_installation = true,
 })

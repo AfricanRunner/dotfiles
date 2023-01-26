@@ -23,12 +23,17 @@ opt.splitbelow = true
 opt.iskeyword:append('-')
 
 opt.clipboard = 'unnamed'
+opt.mouse = ''
 
 -- To-do: Format nicely, add git buffers
 api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
   pattern = { '*.md', '*.txt' },
   callback = function()
+    opt.tabstop = 2
+    opt.shiftwidth = 2
     opt.spell = true
+    opt.linebreak = true
+    opt.signcolumn = 'no'
   end,
 })
 
