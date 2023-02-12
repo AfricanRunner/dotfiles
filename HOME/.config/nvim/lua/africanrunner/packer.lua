@@ -56,7 +56,7 @@ return packer.startup(function(use)
 
   -- To-do: ts plugins
 
-  use({ "glepnir/lspsaga.nvim", branch = "main" }) -- enhanced lsp uis
+  use({ "glepnir/lspsaga.nvim", branch = "main", commit = "b7b4777369b441341b2dcd45c738ea4167c11c9e" }) -- enhanced lsp uis
   use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
 
   use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters

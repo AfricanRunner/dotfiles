@@ -20,7 +20,8 @@ mason_lspconfig.setup({
     'rust_analyzer',
     'jdtls',
     'jedi_language_server',
-    'sumneko_lua',
+    -- 'sumneko_lua',
+    'lua_ls',
     'clangd',
   },
 })
