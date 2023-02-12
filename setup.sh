@@ -4,7 +4,8 @@ set -e
 
 dotfiles=(".hushlogin"
           ".config/nvim/init.lua"
-          ".config/nvim/lua/")
+          ".config/nvim/lua/"
+          ".config/tmux/tmux.conf")
 
 working_directory=$(pwd)
 

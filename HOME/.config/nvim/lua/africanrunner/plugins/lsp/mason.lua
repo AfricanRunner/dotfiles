@@ -37,6 +37,7 @@ mason_null_ls.setup({
     'mypy',
     'cpplint', -- python formatter
     'clang_format',
+    'taplo',
   },
   automatic_installation = true,
 })

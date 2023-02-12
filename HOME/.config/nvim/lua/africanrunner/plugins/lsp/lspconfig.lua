@@ -40,6 +40,7 @@ lspconfig['jedi_language_server'].setup({
 
 lspconfig['clangd'].setup({
   capabilities = capabilities,
+  -- cmd = { 'clangd', '-std=c++17' },
   on_attach = on_attach,
 })
 
