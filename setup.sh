@@ -3,6 +3,7 @@
 set -e
 
 dotfiles=(".hushlogin"
+          ".config/cspell.json"
           ".config/nvim/init.lua"
           ".config/nvim/lua/"
           ".config/tmux/tmux.conf")
@@ -24,8 +25,8 @@ copy_safely() {
         echo "cp ${from_path} ${to_path}"
         cp $from_path $to_path
     elif [ -d $from_path ]; then
-        echo "cp -r ${from_path} ${to_path}"
-        cp -r $from_path $to_path
+        echo "cp -R ${from_path}. ${to_path}"
+        cp -R $from_path. $to_path
     fi
 }
 

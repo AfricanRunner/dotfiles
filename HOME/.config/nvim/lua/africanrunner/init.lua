@@ -1,3 +1,3 @@
-require("africanrunner.packer")
-require("africanrunner.core")
-require("africanrunner.plugins")
+require('africanrunner.packer')
+require('africanrunner.core')
+require('africanrunner.plugins')

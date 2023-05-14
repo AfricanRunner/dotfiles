@@ -32,7 +32,7 @@ null_ls.setup({
     diagnostics.mypy,
     diagnostics.eslint_d,
     -- npm install -g cspell
-    diagnostics.cspell,
+    diagnostics.cspell.with({ extra_args = { '--config', '~/.config/cspell.json' } }),
     null_ls.builtins.code_actions.cspell,
   },
   on_attach = function(current_client, bufnr)

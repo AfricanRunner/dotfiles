@@ -20,14 +20,14 @@ opt.background = 'dark'
 opt.splitright = true
 opt.splitbelow = true
 
-opt.iskeyword:append('-')
+-- opt.iskeyword:append('-')
 
 opt.clipboard = 'unnamed'
-opt.mouse = ''
+-- opt.mouse = ''
 
 -- To-do: Format nicely, add git buffers
 api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
-  pattern = { '*.md', '*.txt' },
+  pattern = { '*.md', '*.txt', '*.json', '*.jsonnet' },
   callback = function()
     opt.tabstop = 2
     opt.shiftwidth = 2
