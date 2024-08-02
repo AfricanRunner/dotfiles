@@ -34,6 +34,7 @@ null_ls.setup({
     -- npm install -g cspell
     diagnostics.cspell.with({ extra_args = { '--config', '~/.config/cspell.json' } }),
     null_ls.builtins.code_actions.cspell,
+    null_ls.builtins.formatting.rustfmt,
   },
   on_attach = function(current_client, bufnr)
     if current_client.supports_method('textDocument/formatting') then

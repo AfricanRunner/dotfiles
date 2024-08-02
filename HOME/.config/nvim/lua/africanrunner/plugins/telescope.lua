@@ -18,6 +18,11 @@ telescope.setup({
       },
     },
   },
+  pickers = {
+    git_files = {
+      git_ignore = true,
+    },
+  },
 })
 
 telescope.load_extension('fzf')

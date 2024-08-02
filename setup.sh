@@ -5,6 +5,7 @@ set -e
 dotfiles=(".hushlogin"
           ".config/cspell.json"
           ".config/nvim/init.lua"
+          ".config/nvim-lazy/"
           ".config/nvim/lua/"
           ".config/tmux/tmux.conf")
 
