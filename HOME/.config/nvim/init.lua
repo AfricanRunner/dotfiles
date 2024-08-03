@@ -1,3 +1,1 @@
-require('africanrunner')
-
--- To-do: Cite sources
+require('config')
