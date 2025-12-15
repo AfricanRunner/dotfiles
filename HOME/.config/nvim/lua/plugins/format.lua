@@ -3,10 +3,13 @@ local M = {
   opts = {
     formatters_by_ft = {
       markdown = { 'prettier', 'injected' },
+      html = { 'prettier' },
       lua = { 'stylua' },
       python = { 'yapf' },
       c = { 'clang-format' },
+      cc = { 'clang-format' },
       cpp = { 'clang-format' },
+      zig = { 'zformat' },
     },
     formatters = {
       stylua = {

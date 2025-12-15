@@ -2,12 +2,20 @@ local M = {
   'neovim/nvim-lspconfig',
   dependencies = { 'williamboman/mason.nvim', 'williamboman/mason-lspconfig.nvim' },
   config = function()
-    local lspconfig = require('lspconfig')
 
-    lspconfig.jedi_language_server.setup({})
-    lspconfig.clangd.setup({})
+    vim.lsp.config('jedi_language_server', {})
+    vim.lsp.config('clangd', {})
+    vim.lsp.config('zls', {})
 
-    lspconfig.lua_ls.setup({
+    vim.lsp.config('ltex', {
+      settings = {
+        ltex = {
+          language = 'en',
+        },
+      },
+    })
+
+    vim.lsp.config('lua_ls', {
       settings = { -- custom settings for lua
         Lua = {
           -- make the language server recognize "vim" global
@@ -37,6 +45,10 @@ local M = {
       vim.ui.input({ prompt = 'Rename: ', default = vim.fn.expand('<cword>') }, function(name)
         vim.lsp.buf.rename(name)
       end)
+    end)
+
+    vim.keymap.set('n', '<leader>d', function()
+      vim.diagnostic.open_float()
     end)
   end,
 }

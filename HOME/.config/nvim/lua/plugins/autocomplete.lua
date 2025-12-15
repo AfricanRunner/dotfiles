@@ -9,6 +9,7 @@ local M = {
   opts = function()
     local cmp = require('cmp')
     return {
+      mapping = cmp.mapping.preset.insert({}),
       sources = cmp.config.sources({
         { name = 'nvim_lsp' }, -- lsp
         { name = 'luasnip' }, -- snippets
