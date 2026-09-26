@@ -1,0 +1,29 @@
+
+bindkey -v
+bindkey "^?" backward-delete-char
+bindkey '^ ' autosuggest-accept
+
+alias vi="nvim"
+alias ll="ls -al"
+
+alias gl="git log"
+alias gd="git diff"
+alias gu="git push"
+alias gc="git commit"
+alias gs="git status"
+alias gr="git rebase"
+alias gh="git checkout"
+
+alias br="bazel run"
+alias bt="bazel test"
+alias bb="bazel build"
+alias bq="bazel query"
+
+HISTFILE="$ZDOTDIR/.zsh_history"
+HISTSIZE=10000
+SAVEHIST=10000
+setopt SHARE_HISTORY
+
+. "$HOME/.cargo/env"
+
+export COLORTERM=truecolor
