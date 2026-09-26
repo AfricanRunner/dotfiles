@@ -1,15 +1,19 @@
-#!/bin/sh
+#!/bin/bash
 
-set -e
+set -eou pipefail
 
 dotfiles=(".hushlogin"
-          ".config/cspell.json"
-          ".config/ghostty/config"
+          ".gitconfig"
           ".config/nvim/init.lua"
           ".config/nvim/lua/"
-          ".config/tmux/tmux.conf")
+          ".config/zsh/zshrc"
+          ".config/zsh/.zshrc"
+          ".config/zsh/.p10k.zsh")
 
-working_directory=$(pwd)
+trace() {
+    echo "$@"
+    "$@"
+}
 
 copy_safely() {
     from_path=$1
@@ -17,38 +21,35 @@ copy_safely() {
 
     directory=$(dirname $to_path)
     if [ ! -d $directory ]; then
-        echo "mkdir -p ${directory}"
-        mkdir -p $directory
+        trace mkdir -p $directory
     fi
     
 
     if [ -f $from_path ]; then
-        echo "cp ${from_path} ${to_path}"
-        cp $from_path $to_path
+        trace cp $from_path $to_path
     elif [ -d $from_path ]; then
-        echo "cp -R ${from_path}. ${to_path}"
-        cp -R $from_path. $to_path
+        trace cp -R $from_path. $to_path
     fi
 }
 
 copy_files_into_repo() {
+    trace rm -r HOME/
     for dotfile in ${dotfiles[@]}; do
-        echo $dotfile
-        copy_safely ~/$dotfile $working_directory/HOME/$dotfile
+        copy_safely "$HOME/$dotfile" "HOME/$dotfile"
     done
 }
 
 copy_files_out_of_repo() {
     for dotfile in ${dotfiles[@]}; do
-        copy_safely $working_directory/HOME/$dotfile ~/$dotfile
+        copy_safely "HOME/$dotfile" "$HOME/$dotfile"
     done
 }
 
 case $1 in
-    -i|--copy-in)
+    -i|--in)
         copy_files_into_repo
         ;;
-    -o|--copy-out)
+    -o|--out)
         copy_files_out_of_repo
         ;;
     *)

@@ -1,7 +1,3 @@
-local A = {
-	"williamboman/mason.nvim",
-	config = true,
-}
 
 local M = {
 	"mfussenegger/nvim-lint",
@@ -15,16 +11,10 @@ local M = {
 		vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "InsertLeave" }, {
 			callback = function()
 				lint.try_lint()
-				lint.try_lint("cspell")
+				-- lint.try_lint("cspell")
 			end,
 		})
 	end,
 }
 
-local N = {
-	"rshkarin/mason-nvim-lint",
-	dependencies = { "williamboman/mason.nvim", "mfussenegger/nvim-lint" },
-	config = true,
-}
-
-return { A, M, N }
+return { M }

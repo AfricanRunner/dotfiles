@@ -1,0 +1,5 @@
+[user]
+	email = ai@africanrunner.net
+	name = AfricanRunnerAI
+[core]
+	editor = nvim
